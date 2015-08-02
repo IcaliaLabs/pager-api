@@ -9,7 +9,7 @@ module PagerApi
 
   # Meta tag information for pagination
   mattr_accessor :include_pagination_on_meta
-  @@include_pagination_on_meta = false
+  @@include_pagination_on_meta = true
 
   def self.include_pagination_on_meta?
     @@include_pagination_on_meta
