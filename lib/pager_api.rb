@@ -11,8 +11,20 @@ module PagerApi
   mattr_accessor :include_pagination_on_meta
   @@include_pagination_on_meta = true
 
+  # Links headeras with pagination information
+  mattr_accessor :include_pagination_headers
+  @@include_pagination_headers = false
+
+  # Total Count Header name
+  mattr_accessor :total_count_header
+  @@total_count_header = "X-Total-Count"
+
   def self.include_pagination_on_meta?
     @@include_pagination_on_meta
+  end
+
+  def self.include_pagination_headers?
+    @@include_pagination_headers
   end
 
   #Method to configure pager api
