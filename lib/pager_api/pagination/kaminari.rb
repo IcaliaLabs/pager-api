@@ -1,3 +1,4 @@
+require 'pry'
 module PagerApi
   module Pagination
     module Kaminari
@@ -73,7 +74,7 @@ module PagerApi
           {
             pagination:
             {
-              per_page: options[:per_page] || params[:per_page],
+              per_page: options[:per_page].to_i || params[:per_page].to_i || ::Kaminari.config.default_per_page,
               total_pages: collection.total_pages,
               total_objects: collection.total_count,
               links: pagination_links(collection)

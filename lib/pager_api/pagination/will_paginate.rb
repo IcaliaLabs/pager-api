@@ -73,7 +73,7 @@ module PagerApi
           {
             pagination:
             {
-              per_page: options[:per_page] || params[:per_page],
+              per_page: options[:per_page] || params[:per_page] || ::WillPaginate.per_page,
               total_pages: collection.total_pages,
               total_objects: collection.total_entries,
               links: pagination_links(collection)
