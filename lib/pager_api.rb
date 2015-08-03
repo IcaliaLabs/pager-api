@@ -1,7 +1,4 @@
 module PagerApi
-  extend ActiveSupport::Autoload
-
-  autoload :Kaminari
 
   # pagination handler
   mattr_accessor :pagination_handler
@@ -35,4 +32,4 @@ module PagerApi
 end
 
 require "pager_api/version"
-require "pager_api/hooks"
+require "pager_api/railtie"
