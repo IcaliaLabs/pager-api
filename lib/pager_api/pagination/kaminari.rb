@@ -20,7 +20,7 @@ module PagerApi
       private
 
         # Link: <http://example.com/api/v1/users?page="2">; rel="next",
-        # <http://example.com/sample/api/v1//users?page="5">; rel="last",
+        # <http://example.com/api/v1//users?page="5">; rel="last",
         # <http://example.com/api/v1//users?page="1">; rel="first",
         # <http://example.com/api/v1/users?page="1">; rel="prev",
         def pagination_headers(collection)
