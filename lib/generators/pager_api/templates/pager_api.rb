@@ -14,7 +14,7 @@ PagerApi.setup do |config|
 
   # Includes Pagination information on a Link Header
   #
-  # config.include_pagination_headers = false
+  # config.include_pagination_headers = true
 
   # Set the Total-Count Header name
   # config.total_count_header = "X-Total-Count"

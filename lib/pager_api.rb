@@ -10,7 +10,7 @@ module PagerApi
 
   # Links headeras with pagination information
   mattr_accessor :include_pagination_headers
-  @@include_pagination_headers = false
+  @@include_pagination_headers = true
 
   # Total Count Header name
   mattr_accessor :total_count_header
