@@ -2,7 +2,7 @@
 
 ![Pager](http://iplp.com/pagers/images/448/Gold+Alphanumeric+Pager+-+2871+-+3+-+400.jpg)
 
-API Pagination made it right. Pager API is a library to help you add `meta` information and the adecuate header with pagination information based on the [JSON API standard](http://jsonapi.org) for your Rails app.
+API Pagination done right. Pager API is a library to help you add `meta` information and the adecuate header with pagination information based on the [JSON API standard](http://jsonapi.org) for your Rails app.
 
 ## Table of contents
 - [Quick start](#quick-start)
@@ -18,7 +18,7 @@ API Pagination made it right. Pager API is a library to help you add `meta` info
 
 ## Quick Start
 
-`pager_api` depends on [Kaminari](https://github.com/amatsuda/kaminari) or [WillPaginate](https://github.com/mislav/will_paginate) to handle pagination. You need to add one of these to your Gemfile:
+`pager_api` depends on [Kaminari](https://github.com/amatsuda/kaminari) or [WillPaginate](https://github.com/mislav/will_paginate) to handle pagination. You need to add one of these gems to your Gemfile **before** the `pager_api` gem:
 
 ```ruby
 # gem 'will_paginate'
@@ -44,11 +44,11 @@ The gem comes with an installer for you to configure it, for example to switch b
 
 This will create a file under the `initializers` directory called `pager_api.rb`. You can easily configure it there to meet your needs.
 
-By default `pager_api` uses [Kaminari](https://github.com/amatsuda/kaminari).
+By default `pager_api` uses [Kaminari](https://github.com/amatsuda/kaminari). Configure the `pager_api.rb` initializer in order to use [WillPaginate](https://github.com/mislav/will_paginate).
 
 ## Usage
 
-On your controller where you are providing a paginated collection, where you may have something like:
+In the controller where you are providing a paginated collection, you may have something like this:
 
 ```ruby
 class UsersController < ApplicationController
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
 end
 ```
 
-With `pager_api` is really easy to achieve just by:
+With `pager_api` it is really easy to achieve the above by:
 
 ```ruby
 class UsersController < ApplicationController
@@ -109,7 +109,7 @@ By default it will also include a `Link` header with the following information:
 # <http://example.com/api/v1/users?page="1">; rel="prev",
 ```
 
-The header will be created with the corresponding `first`, `last`, `prev` and `next`.
+The header will be created with the corresponding `first`, `last`, `prev` and `next` links.
 
 ## Bug tracker & feature request
 
@@ -117,7 +117,7 @@ Have a bug or a feature request? [Please open a new issue](https://github.com/Ic
 
 ## Contributing
 
-Please submit all pull requests against a separate branch. Although it does not have tests yet, be a nice guy and add some for your feature. We'll be working hard to add them too.
+Please submit all pull requests against a separate branch. Although `pager_api` does not have tests yet, be a nice guy and add some for your feature. We'll be working hard to add them too.
 
 In case you are wondering what to attack, we have a milestone with the version to work, some fixes and refactors. Feel free to start one.
 
