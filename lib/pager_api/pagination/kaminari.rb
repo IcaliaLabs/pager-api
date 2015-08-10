@@ -1,4 +1,3 @@
-require 'pry'
 module PagerApi
   module Pagination
     module Kaminari
