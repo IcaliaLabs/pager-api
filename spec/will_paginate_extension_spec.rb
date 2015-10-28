@@ -39,9 +39,22 @@ class DummyRequest
   end
 end
 
+# WillPaginate allows the user to define a `per_page` variable
+# directly onto the model.
+#
+# An Example in ActiveRecord
+# class User < ActiveRecord::Base
+#   self.per_page = 20
+# end
+#
+# These tests allow us to test that the `per_page` is actually used
+# before hitting the ::WillPaginate default value.
 describe PagerApi::Pagination::WillPaginate do
   before :all do
     @my_letters = ('a'..'z').to_a
+    def @my_letters.per_page
+      9
+    end
   end
 
   let(:class_with_pagination) { DummyCtrl.new }
@@ -51,5 +64,9 @@ describe PagerApi::Pagination::WillPaginate do
 
   it 'should properly give per page in response (30 per page)' do
     expect(class_with_pagination.paginate(@my_letters, per_page: 30)[:meta][:pagination][:per_page]).to eq(30)
+  end
+
+  it 'should read the per_page off of the collection itself' do
+    expect(class_with_pagination.paginate(@my_letters)[:meta][:pagination][:per_page]).to eq(9)
   end
 end
