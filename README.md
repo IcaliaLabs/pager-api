@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/repos/5716a784f58374007c000951/badges/e6194632db1d8a1e40bc/gpa.svg)](https://codeclimate.com/repos/5716a784f58374007c000951/feed)
+[![Test Coverage](https://codeclimate.com/repos/5716a784f58374007c000951/badges/e6194632db1d8a1e40bc/coverage.svg)](https://codeclimate.com/repos/5716a784f58374007c000951/coverage)
+[![Issue Count](https://codeclimate.com/repos/5716a784f58374007c000951/badges/e6194632db1d8a1e40bc/issue_count.svg)](https://codeclimate.com/repos/5716a784f58374007c000951/feed)
+
 # Pager API
 
 ![Pager](http://iplp.com/pagers/images/448/Gold+Alphanumeric+Pager+-+2871+-+3+-+400.jpg)
