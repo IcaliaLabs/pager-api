@@ -4,7 +4,11 @@ require "pager_api/pagination/#{PagerApi.pagination_handler}"
 begin; require 'kaminari';           rescue LoadError; end
 begin; require 'will_paginate';      rescue LoadError; end
 
-ActionController::Base.send(:include, "PagerApi::Pagination::#{PagerApi.pagination_handler.to_s.classify}".constantize)
+if defined?(ActionController::API)
+  ActionController::API.send(:include, "PagerApi::Pagination::#{PagerApi.pagination_handler.to_s.classify}".constantize)
+else
+  ActionController::Base.send(:include, "PagerApi::Pagination::#{PagerApi.pagination_handler.to_s.classify}".constantize)
+end
 
 unless defined?(Kaminari) or defined?(WillPaginate)
   Kernel.warn <<-WARNING.gsub(/^\s{4}/, '')
