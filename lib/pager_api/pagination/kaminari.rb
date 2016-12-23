@@ -13,7 +13,7 @@ module PagerApi
         options[:meta] = meta(paginated_collection, options) if PagerApi.include_pagination_on_meta?
 
         pagination_headers(paginated_collection) if PagerApi.include_pagination_headers?
-        render json: options
+        render options
       end
 
       private

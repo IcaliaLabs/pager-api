@@ -50,6 +50,30 @@ This will create a file under the `initializers` directory called `pager_api.rb`
 
 By default `pager_api` uses [Kaminari](https://github.com/amatsuda/kaminari). Configure the `pager_api.rb` initializer in order to use [WillPaginate](https://github.com/mislav/will_paginate).
 
+**We highly recommend you use [Active Model Serializers](https://github.com/rails-api/active_model_serializers) for rendering your JSON responses**
+
+### A note on Active Model Serializers 0.10
+
+Currently the `pager-api` gem needs some configuration to work nice with
+Active Model Serializers, just add a file under `config/initializers` on
+your rails project:
+
+```console
+% touch config/initializers/active_model_serializers.rb
+```
+
+And a this line:
+
+```ruby
+ActiveModelSerializers.config.adapter = :json
+```
+
+Or even
+
+```ruby
+ActiveModelSerializers.config.adapter = :json_api
+```
+
 ## Usage
 
 In the controller where you are providing a paginated collection, you may have something like this:
