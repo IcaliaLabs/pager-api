@@ -132,8 +132,8 @@ By default it will also include a `Link` header with the following information:
 
 ```
 # Link: <http://example.com/api/v1/users?page="2">; rel="next",
-# <http://example.com/api/v1//users?page="5">; rel="last",
-# <http://example.com/api/v1//users?page="1">; rel="first",
+# <http://example.com/api/v1/users?page="5">; rel="last",
+# <http://example.com/api/v1/users?page="1">; rel="first",
 # <http://example.com/api/v1/users?page="1">; rel="prev",
 ```
 
