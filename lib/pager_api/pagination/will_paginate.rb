@@ -64,7 +64,7 @@ module PagerApi
 
         def paginate_collection(collection, options = {})
           options[:page] = params[:page] || 1
-          options[:per_page] = options.delete(:per_page) || params[:per_page]
+          options[:per_page] = options.delete(:per_page) || params[:per_page] || collection.per_page
 
           collection.paginate(options)
         end
