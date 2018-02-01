@@ -12,6 +12,10 @@ module PagerApi
   mattr_accessor :include_pagination_headers
   @@include_pagination_headers = true
 
+  # Total Pages Header name
+  mattr_accessor :total_pages_header
+  @@total_count_header = "X-Total-Pages"
+
   # Total Count Header name
   mattr_accessor :total_count_header
   @@total_count_header = "X-Total-Count"
