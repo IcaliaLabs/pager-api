@@ -34,7 +34,8 @@ module PagerApi
           end
 
           headers['Link'] = links.join(", ") unless links.empty?
-          headers[PagerApi.total_count_header] = collection.total_pages
+          headers[PagerApi.total_pages_header] = collection.total_pages
+          headers[PagerApi.total_count_header] = collection.total_count
 
           return nil
         end
