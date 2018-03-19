@@ -80,15 +80,18 @@ In the controller where you are providing a paginated collection, you may have s
 
 ```ruby
 class UsersController < ApplicationController
+  def index
+    users = User.page(params[:page]).per(15)
 
-	def index
-		users = User.page(params[:page]).per(15)
-		render json: users, meta: { pagination: { 
-											per_page: 15,
-											total_pages: 10,
-											total_objects: 150
-										} }
-	end
+    render json: users,
+           meta: {
+             pagination: {
+               per_page: 15,
+               total_pages: 10,
+               total_objects: 150
+             }
+           }
+  end
 end
 ```
 
@@ -96,12 +99,11 @@ With `pager_api` it is really easy to achieve the above by:
 
 ```ruby
 class UsersController < ApplicationController
-
-	def index
-	   # You can have any scope for the User class in this case
-	   # You can even send the paginated collection
-		paginate User.unscoped, per_page: 15 
-	end
+  def index
+    # You can have any scope for the User class in this case
+    # You can even send the paginated collection
+    paginate User.unscoped, per_page: 15
+  end
 end
 ```
 
