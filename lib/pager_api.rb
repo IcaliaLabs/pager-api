@@ -4,6 +4,14 @@ module PagerApi
   mattr_accessor :pagination_handler
   @@pagination_handler = :kaminari
 
+  # page access method
+  mattr_accessor :page_access_method
+  @@page_access_method = :page
+
+  # per page access method
+  mattr_accessor :per_page_access_method
+  @@per_page_access_method = :per
+
   # Meta tag information for pagination
   mattr_accessor :include_pagination_on_meta
   @@include_pagination_on_meta = true
@@ -14,7 +22,7 @@ module PagerApi
 
   # Total Pages Header name
   mattr_accessor :total_pages_header
-  @@total_count_header = "X-Total-Pages"
+  @@total_pages_header = "X-Total-Pages"
 
   # Total Count Header name
   mattr_accessor :total_count_header

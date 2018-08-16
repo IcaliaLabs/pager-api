@@ -66,7 +66,7 @@ module PagerApi
           options[:page] = params[:page] || 1
           options[:per_page] = options.delete(:per_page) || params[:per_page] || ::Kaminari.config.default_per_page
 
-          collection.page(options[:page]).per(options[:per_page])
+          collection.send(PagerApi.page_access_method, options[:page]).send(PagerApi.per_page_access_method, options[:per_page])
         end
 
         def meta(collection, options = {})
