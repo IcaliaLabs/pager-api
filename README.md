@@ -22,11 +22,12 @@ API Pagination done right. Pager API is a library to help you add `meta` informa
 
 ## Quick Start
 
-`pager_api` depends on [Kaminari](https://github.com/amatsuda/kaminari) or [WillPaginate](https://github.com/mislav/will_paginate) to handle pagination. You need to add one of these gems to your Gemfile **before** the `pager_api` gem:
+`pager_api` depends on [Pagy](https://github.com/ddnexus/pagy), [Kaminari](https://github.com/amatsuda/kaminari), [WillPaginate](https://github.com/mislav/will_paginate) to handle pagination. You need to add one of these gems to your Gemfile **before** the `pager_api` gem:
 
 ```ruby
 # gem 'will_paginate'
 # gem 'kaminari'
+# gem 'pagy'
 gem 'pager_api'
 ```
 
@@ -48,7 +49,7 @@ The gem comes with an installer for you to configure it, for example to switch b
 
 This will create a file under the `initializers` directory called `pager_api.rb`. You can easily configure it there to meet your needs.
 
-By default `pager_api` uses [Kaminari](https://github.com/amatsuda/kaminari). Configure the `pager_api.rb` initializer in order to use [WillPaginate](https://github.com/mislav/will_paginate).
+By default `pager_api` uses [Pagy](https://github.com/ddnexus/pagy). Configure the `pager_api.rb` initializer in order to use [WillPaginate](https://github.com/mislav/will_paginate) or [Kaminari](https://github.com/amatsuda/kaminari).
 
 **We highly recommend you use [Active Model Serializers](https://github.com/rails-api/active_model_serializers) for rendering your JSON responses**
 
