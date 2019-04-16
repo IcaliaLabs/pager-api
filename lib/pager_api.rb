@@ -14,7 +14,7 @@ module PagerApi
 
   # Total Pages Header name
   mattr_accessor :total_pages_header
-  @@total_count_header = "X-Total-Pages"
+  @@total_pages_header = "X-Total-Pages"
 
   # Total Count Header name
   mattr_accessor :total_count_header
