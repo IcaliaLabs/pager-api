@@ -2,7 +2,7 @@ module PagerApi
 
   # pagination handler
   mattr_accessor :pagination_handler
-  @@pagination_handler = :kaminari
+  @@pagination_handler = :pagy
 
   # Meta tag information for pagination
   mattr_accessor :include_pagination_on_meta
@@ -32,7 +32,6 @@ module PagerApi
   def self.setup
     yield self
   end
-
 end
 
 require "pager_api/version"
