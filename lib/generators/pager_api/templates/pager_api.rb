@@ -16,6 +16,9 @@ PagerApi.setup do |config|
   #
   # config.include_pagination_headers = true
 
+  # Set the Total-Pages Header name
+  # config.total_pages_header = "X-Total-Pages"
+
   # Set the Total-Count Header name
   # config.total_count_header = "X-Total-Count"
 end
