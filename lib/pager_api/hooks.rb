@@ -18,6 +18,8 @@ require "pager_api/pagination/#{pagination_handler_name}"
 
 if defined?(ActionController::Base)
   ActionController::Base.send(:include, "PagerApi::Pagination::#{pagination_handler_name.classify}".constantize)
-else
+end
+
+if defined?(ActionController::API)
   ActionController::API.send(:include, "PagerApi::Pagination::#{pagination_handler_name.classify}".constantize)
 end
