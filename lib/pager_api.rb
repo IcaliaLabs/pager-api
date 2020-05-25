@@ -4,6 +4,14 @@ module PagerApi
   mattr_accessor :pagination_handler
   @@pagination_handler = :pagy
 
+  # page access method
+  mattr_accessor :page_access_method
+  @@page_access_method = :page
+
+  # per page access method
+  mattr_accessor :per_page_access_method
+  @@per_page_access_method = :per
+
   # Meta tag information for pagination
   mattr_accessor :include_pagination_on_meta
   @@include_pagination_on_meta = true
