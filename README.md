@@ -6,7 +6,7 @@
 
 ![Pager](http://iplp.com/pagers/images/448/Gold+Alphanumeric+Pager+-+2871+-+3+-+400.jpg)
 
-API Pagination done right. Pager API is a library to help you add `meta` information and the adecuate header with pagination information based on the [JSON API standard](http://jsonapi.org) for your Rails app.
+API Pagination done right. Pager API is a library to help you add `meta` information and the adequate header with pagination information based on the [JSON API standard](http://jsonapi.org) for your Rails app.
 
 ## Table of contents
 - [Quick start](#quick-start)
