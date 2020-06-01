@@ -73,14 +73,14 @@ module PagerApi
       end
 
       def meta(pagy, options = {})
-        {
+        options.fetch(:meta, {}).merge(
           pagination: {
             per_page: pagy.items,
             total_pages: pagy.pages,
             total_objects: pagy.count,
             links: pagination_links(pagy),
           },
-        }
+        )
       end
     end
   end
