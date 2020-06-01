@@ -71,7 +71,7 @@ module PagerApi
         end
 
         def meta(collection, options = {})
-          {
+          options.fetch(:meta, {}).merge(
             pagination:
             {
               per_page: options[:per_page] || params[:per_page] || ::WillPaginate.per_page,
@@ -79,7 +79,7 @@ module PagerApi
               total_objects: collection.total_entries,
               links: pagination_links(collection)
             }
-          }
+          )
         end
     end
   end
